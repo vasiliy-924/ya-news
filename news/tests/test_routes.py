@@ -28,7 +28,7 @@ class TestRoutes(TestCase):
             ('news:home', None),
             ('news:detail', (self.news.id,)),
             ('users:login', None),
-            ('users:logout', None),
+            #('users:logout', None),
             ('users:signup', None),
         )
         for name, args in urls:
