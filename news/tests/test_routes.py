@@ -15,6 +15,13 @@ class TestRoutes(TestCase):
     @classmethod
     def setUpTestData(cls):
         cls.news = News.objects.create(title='Заголовок', text='Текст')
+        cls.author = User.objects.create(username='Лев Толстой')
+        cls.reader = User.objects.create(username='Читатель простой')
+        cls.comment = Comment.objects.create(
+            news=cls.news,
+            author=cls.author,
+            text='Текст комментария'
+        ) 
 
     def test_pages_availability(self):
         urls = (
